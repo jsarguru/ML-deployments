@@ -1,4 +1,5 @@
 from flask import request, jsonify, Flask
+from flask_ngrok import run_with_ngrok
 import numpy as np
 import joblib
 
@@ -44,7 +45,7 @@ def predict():
 print("Prediction endpoint '/predict' defined.") 
 
 if __name__ == '__main__':
-    print("Starting Flask app...")
-    # Run the Flask application, making it accessible externally
-    # debug=True allows for automatic reloads and provides a debugger
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    print("Starting Flask app with ngrok...")
+    # Run the Flask application with ngrok, making it accessible externally
+    # The ngrok URL will be printed in the output below.
+    run_with_ngrok(app)
