@@ -47,4 +47,4 @@ if __name__ == '__main__':
     print("Starting Flask app...")
     # Run the Flask application, making it accessible externally
     # debug=True allows for automatic reloads and provides a debugger
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0', port=5000)
